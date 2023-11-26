@@ -48,19 +48,3 @@ df_kr.describe()
 
 # 읍면동명의 유일 값을 출력
 df_kr['읍면동명'].unique()
-
-
-###                        ###
-### 02 Filtering & Sorting ###
-###                        ###
-
-df = pd.read_csv('https://raw.githubusercontent.com/Datamanim/pandas/main/chipo.csv')
-
-# quantitiy컬럼의 값이 3인 데이터만 첫 5행을 출력
-df.loc[df.quantity == 3]
-
-# quantity, item_price 두개의 컬럼으로 구성된 새로운 데이터프레임을 정의
-df_new = df[['quantity', 'item_price']].copy()
-
-# item_price 컬럼의 달러표시를 제거하고 float타입으로 저장하여 new_price 컬럼에 저장 ( str은 문자열 함수 사용하기 위해 )
-df.loc[:, 'new_price'] = df['item_price'].str.replace('$', '').astype(float)
