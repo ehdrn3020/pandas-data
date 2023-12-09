@@ -20,3 +20,8 @@ df['host_name'].value_counts().to_frame().rename(columns={'host_name': 'counts'}
 # 두개의 컬럼을 가져올 때는 DataFrame 이여야 한다.
 df[['neighbourhood_group', 'neighbourhood']].groupby(['neighbourhood_group', 'neighbourhood'], as_index=False).size()
 
+# neighbourhood_group 값에 따른 price 최대, 최소 값을 구하여라
+df[['neighbourhood_group','price']].groupby('neighbourhood_group').agg(['max', 'min'])
+
+# neighbourhood_group 값이 Queens값을 가지는 데이터들 중 neighbourhood 그룹별로 price값의 최대, 최소값을 구하라
+df.loc[df['neighbourhood_group']=='Queens'].groupby('neighbourhood_group')['price'].agg(['max', 'min'])
