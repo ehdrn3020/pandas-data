@@ -35,4 +35,4 @@ df['newEduLevel'].value_counts()
 def filter(x): # x는 series타입
     return 1 if x['Marital_Status'] == 'Married' and x['Card_Category'] == 'Platinum' else 0
 # axis = 0 : 열 / axis = 1 : 행
-df[['Marital_Status','Card_Category']].apply(filter, axis=1)
+df.loc[:,'newEduLevel'] = df[['Marital_Status','Card_Category']].apply(filter, axis=1)
