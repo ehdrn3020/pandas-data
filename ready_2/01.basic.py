@@ -1,3 +1,4 @@
+# 데이터 프레임 만들기
 import pandas as pd
 df1 = pd.DataFrame(
     [[3,2,5],[10,0,2],[6,5,3]],
@@ -18,6 +19,8 @@ df1.index
 df1.columns
 # Index(['사과', '자두', '포도'], dtype='object')
 
+
+### numpy와 같인 pandas도 value를 조건에 따라 boolean 형태로 결과값을 내기 쉬움
 df1.sum()
 # 사과    19
 # 자두     7

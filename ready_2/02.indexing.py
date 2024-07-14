@@ -4,6 +4,7 @@ import numpy as np
 a = np.random.randint(0,10,24).reshape(4,6)
 df = pd.DataFrame(a, index=list("가나다라"), columns=list("ABCDEF"))
 
+
 # df["열이름"] : 열만가능
 df["A"]
 # 가    5
@@ -12,12 +13,16 @@ df["A"]
 # 라    9
 # Name: A, dtype: int64
 
+# 여러개의 열 조회
 df[["A","B","C"]]
 #    A	B	C
 # 가	 5	7	1
 # 나	 7	3	9
 # 다	 7	3	4
 # 라	 9	5	6
+
+
+## 열과 행을 모두 조회할 수 있는 loc / iloc 메소드
 
 # df.loc["행이름", "열이름"]
 df.loc["가":"다", "A":"D"]
